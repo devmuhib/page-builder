@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  .drop-area {
+    @apply relative hover:border border-dashed border-[#FFBD08];
+  }
+
+  .active-drag-area {
+    @apply hover:border border-dashed border-[#FFBD08];
+  }
+
+  .drop-indicator {
+    @apply text-[#585858] font-[600] w-full hidden justify-center items-center h-[30px] bg-[#FFF7E1] text-[14px] leading-[14px];
+  }
+
+  .drop-indicator .drop-indicator-top {
+    @apply border-b-2 border-dashed border-[#ffbd08];
+  }
+  .drop-indicator .drop-indicator-bottom {
+    @apply border-t-2 border-dashed border-[#ffbd08];
+  }
+
+  .active-drag-area {
+    @apply border-2 border-dashed border-[#ffbd08];
+  }
+
+  .active-drag-area.only-bottom-place-area .drop-indicator-bottom {
+    @apply flex;
+  }
+
+  .active-drag-area.only-bottom-place-area .drop-indicator-top {
+    @apply hidden;
+  }
+
+  .active-drag-area.only-top-place-area .drop-indicator-bottom {
+    @apply hidden;
+  }
+
+  .active-drag-area.only-top-place-area .drop-indicator-top {
+    @apply flex;
+  }
+}
